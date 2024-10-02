@@ -1,0 +1,566 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	color: #333;
+	background: #f9f9f9;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+#wrapper {
+	width: 100px;
+	height: auto;
+	margin: 0 auto;
+	background: #fff;
+	overflow: hidden;
+	box-shadow: 0 0 3px #dcdcdc;
+	outline: 0px solid red;
+}
+	/*Шапка*/
+	.header {
+			width: 1000px;
+			height: 140px;
+			border-bottom: 1px solid #eee;
+			overflow: hidden;
+	}
+			/*Название блога и описание*/
+			.bloginfo {
+					float: left;
+					width: 300px;
+					height: 60px;
+					margin: 40px 0 0 30px;
+			}
+					.bloginfo h1 {
+							font-size: 16px;
+							font-weight: bold;
+							margin: 0 0 10px 0;
+					}
+							.bloginfo h1 a {
+									color: #333;
+									text-decoration: none;
+							}
+									.bloginfo h1 a:hover {
+											color: #2d3e50;
+									}
+					.bloginfo p {
+							font-size: 14px;
+							color: #666;
+							line-height: 1.3;
+					}
+			/*Навигация*/
+			.nav {
+					float: right;
+					margin: 55px 20px 0 0; 
+			}
+					.nav ul {
+							list-style-type: none;
+							list-style-position: inside;
+					}
+							.nav ul li {
+									display: inline-block;
+									font-size: 14px;
+									line-height: 1;
+							}
+									.nav ul li a {/*ссылка в пассивном состоянии*/
+											color: #333;
+											margin: 0 0 0 15px;
+											text-decoration: none;
+											padding: 5px 10px;
+									}
+											.nav ul li.current_page_item a {/*активная ссылка*/
+													background: #2d3e50;
+													color: #fff;
+													border-radius: 3px;
+											}
+											.nav ul li a:hover {/*ссылка при наведении*/
+													background: #eee;
+													color: #333;
+													border-radius: 3px;
+											}
+
+	/*Область для вывода контента*/
+	.content {
+			float: left;
+			width: 670px;
+			height: auto;
+			margin: 30px 30px;
+			overflow: hidden;
+			outline: 0px solid blue;
+	}
+			/*Вид записи*/
+			.box-post {
+					width: 670px;
+					height: auto;
+					margin: 0 0 30px 0;
+					padding: 0 0 30px 0;
+					overflow: hidden;
+					border-bottom: 1px solid #eee;
+			}
+					/*миниатюра записи*/
+					.thumbnail-post {
+							float: left;
+							width: 136px;
+							height: 136px;
+							margin: 0 20px 0 0;
+					}
+							.thumbnail-post img {
+									display: block;
+									vertical-align: bottom;
+									padding: 2px 2px;
+									border: 1px solid #dfdfdf;
+									background: #fff;
+									border-radius: 50%;
+							}
+					/*описание записи*/
+					.description-post {
+							float: right;
+							width: 514px;
+							height: auto;
+					}
+							.description-post h2 {
+									font-size: 16px;
+									font-weight: bold;
+									line-height: 1;
+									margin: 0 0 20px 0;
+							}
+									.description-post h2 a {
+											text-decoration: none;
+											color: #333;
+									}
+											.description-post h2 a:hover {
+													color: #2d3e50;
+											}
+							.description-post p.info-post {
+									font-size: 14px;
+									color: #666;
+									line-height: 1;
+									margin: 0 0 30px 0;
+							}
+							.description-post p {
+									font-size: 14px;
+									color: #666;
+									line-height: 1.5;
+									margin: 0 0 30px 0;         
+							}
+							.description-post a.readmore {
+									display: inline-block;
+									padding: 8px 12px;
+									border-radius: 2px;
+									background: #FFD15C;
+									line-height: 1;
+									font-size: 14px;
+									color: #333;
+									text-decoration: none;
+							}
+									.description-post a.readmore:hover {
+											background: #2d3e50;
+											color: #fff;
+									}
+			/*Постраничная навигация*/
+			#page-navi {
+					width: 670px;
+					height: auto;
+			}   
+					/*Ссылка на страницу*/
+					#page-navi a.page-numbers {
+							display: inline-block;
+							font-family: 'Open Sans', sans-serif;
+							font-size: 14px;
+							color: #666;
+							padding: 6px 9px;
+							border: 1px solid #dfdfdf;
+							border: 0;
+							margin: 0 0 0 5px;
+							text-decoration: none;
+					}       
+							#page-navi a.page-numbers:hover {
+									color: #2d3e50;
+									border: 1px solid #2d3e50;
+									padding: 5px 8px;
+							}       
+					/*Активная ссылка*/
+					#page-navi .page-numbers.current {
+							display: inline-block;
+							font-family: 'Open Sans', sans-serif;
+							font-size: 14px;
+							color: #2d3e50;
+							padding: 5px 8px;
+							margin: 0 0 0 10px;
+							border: 1px solid #2d3e50;
+							background-color: #fff;
+							cursor: default;
+					}
+					/*Страница N из N*/
+					#page-navi span.pages {
+							font-size: 14px;
+							line-height: 1;
+							color: #666;
+					}
+
+	/*Боковая колонка*/
+	.sidebar {
+			float: right;
+			width: 240px;
+			height: auto;
+			margin: 30px 30px 30px 0;
+			outline: 0px solid red;
+	}
+			/*заголовок виджета*/
+			#title-widget {
+					width: 240px;
+					height: auto;
+					margin: 0 0 30px 0;
+			}
+					#title-widget h6 {
+							font-weight: bold;
+							font-size: 16px;
+							color: #333;
+							line-height: 1;
+					}
+			/*виджет - текст*/
+			.textwidget {
+					width: 240px;
+					height: auto;
+					margin: 0 0 30px 0;
+			}
+					.textwidget p {
+							font-size: 14px;
+							color: #666;
+							line-height: 1.5;
+					}
+							.textwidget p a {
+									color: #2d3e50;
+									text-decoration: underline;
+							}
+									.textwidget p a:hover {
+											color: #666;
+											text-decoration: none;
+									}
+					.textwidget img {
+							display: block;
+							vertical-align: bottom;
+					}
+
+					/*Виджет - произвольное меню*/
+					.widget_nav_menu {
+							width: 240px;
+							height: auto;
+							margin: 0 0 30px 0;             
+					}
+							.widget_nav_menu ul {
+									list-style-type: none;
+									list-style-position: inside;
+							}
+									.widget_nav_menu ul li {
+											font-size: 14px;
+											color: #666;
+									}
+											.widget_nav_menu ul li a {
+													display: list-item;
+													color: #666;
+													text-decoration: none;
+													margin: 0 0 15px 0;
+											}   
+													.widget_nav_menu ul li.current-menu-item a {/*активная категория или страница*/
+															color: #2d3e50;
+															text-decoration: underline;
+													}
+													.widget_nav_menu ul li a:hover {/*ссылка при наведении*/
+															color: #333;
+															text-decoration: underline;
+													}
+									/*древовидный список*/
+									.widget_nav_menu ul.sub-menu {
+											margin: 0 0 0 15px;
+									}
+											.widget_nav_menu ul.sub-menu a:after {/*стилизация ссылки древовидного списка*/
+													float: left;
+													content: "-";
+													font-size: 14px;
+													color: #666;
+													margin: 0 5px 0 0;
+											}
+													.widget_nav_menu ul.sub-menu li.current-menu-item a {/*активная категория или страница*/
+															color: #2d3e50;
+															text-decoration: underline;
+													}
+													.widget_nav_menu u.sub-menul li a:hover {/*ссылка при наведении*/
+															color: #333;
+															text-decoration: underline;
+													}
+	/*Подвал*/
+	.footer {
+			width: 1000px;
+			height: auto;
+			border-top: 1px solid #eee;
+			padding: 30px 0;
+			overflow: hidden;
+	}
+			.footer p {
+					font-size: 14px;
+					color: #666;
+					line-height: 1;
+					margin: 0 0 10px 0;
+					text-align: center; 
+			}
+					.footer p:last-child {/*убираем отступ у последнего абзаца*/
+							margin: 0 0 0 0;
+					}
+
+					.information-post {
+						width: 670px;
+						height: auto;
+						margin: 0 0 30px 0;
+				}   
+						/*Заголовок записи/страницы*/
+						.information-post h1 {
+								font-weight: bold;
+								font-size: 16px;
+								color: #333;
+								line-height: 1;
+								margin: 0 0 20px 0;
+						}
+						/*Мета данные о записи/странице*/
+						.information-post p {
+								font-size: 14px;
+								color: #666;
+								line-height: 1;
+						}
+				/* Текст страницы/записи*/
+				.text-post {
+						width: 670px;
+						height: auto;
+						margin: 0 0 20px 0;
+						overflow: hidden;
+				}
+						/*стили для заголовков H1-H6*/
+						.text-post h1, .text-post h2, .text-post h3, .text-post h4, .text-post h5, .text-post h6 {
+								font-weight: bold;
+								color: #333;
+								line-height: 1.5;
+								margin: 10px 0;
+						}
+								.text-post h1 {font-size: 20px;}
+								.text-post h2 {font-size: 19px;}
+								.text-post h3 {font-size: 18px;}
+								.text-post h4 {font-size: 17px;}
+								.text-post h5 {font-size: 16px;}
+								.text-post h6 {font-size: 15px;}
+				 
+						.text-post p {/*стили для абзаца*/
+								font-size: 14px;
+								color: #666;
+								line-height: 1.5;
+								margin: 10px 0;
+						}
+								.text-post p a {
+										color: #2d3e50;
+										text-decoration: underline;
+								}
+										.text-post p a:hover {
+												color: #666;
+												text-decoration: none;
+										}
+						.text-post img {/*стили для изображений*/
+								display: block;
+								vertical-align: bottom;
+						}
+								.text-post .aligncenter {/*выравнивание изображения по центру*/
+										display: block;
+										margin-left: auto;
+										margin-right: auto;
+										margin-top: 10px;
+										margin-bottom: 10px;
+								}
+								.text-post .alignleft {/*выравнивание изображения по левому краю*/
+										float: left;
+										margin-left: 0px;
+										margin-right: 10px;
+								}
+								.text-post .alignright {/*выравнивание изображения по правому краю*/
+										float: right;
+										margin-left: 10px;
+										margin-right: 0px;
+								}
+						.text-post ul {/*стили для маркированного списка*/
+								list-style-type: disc;
+								margin: 0 0 0 30px;
+						}
+								.text-post ul li {
+										font-size: 14px;
+										color: #666;
+										line-height: 1.5;
+										margin: 10px 0;
+								}
+										.text-post ul li a {
+												color: #2d3e50;
+												text-decoration: underline;
+										}
+												.text-post ul li a:hover {
+														color: #666;
+														text-decoration: none;
+												}
+						.text-post ol {/*стили для нумерованного списка*/
+								list-style-type: decimal;
+								margin: 0 0 0 30px;
+						}
+								.text-post ol li {
+										font-size: 14px;
+										color: #666;
+										line-height: 1.5;
+										margin: 10px 0;
+								}
+										.text-post ol li a {
+												color: #2d3e50;
+												text-decoration: underline;
+										}
+												.text-post ol li a:hover {
+														color: #666;
+														text-decoration: none;                      
+												}
+						.text-post blockquote {/*Цитата*/
+								border-left: 2px solid #FFD15C;
+								margin: 0 0 0 15px;
+								padding: 0 0 0 10px;
+						}
+								.text-post blockquote p {
+										font-size: 14px;
+										color: #666;
+										line-height: 1.5;
+										margin: 0 0;
+								}
+										.text-post blockquote p a {
+												color: #2d3e50;
+												text-decoration: underline;
+										}
+												.text-post blockquote p a:hover {
+														color: #666;
+														text-decoration: none;
+												}
+						.text-post sup {/*Верхний индекс*/
+								position: relative;
+								top: -6px;
+								font-size: 12px;
+						}
+						.text-post sub {/*Нижний индекс*/
+								position: relative;
+								top: 6px;
+								font-size: 12px;
+						}
+
+
+						.description-category {
+							width: 670px;
+							height: auto;
+							margin: 0 0 50px 0;
+							overflow: hidden;
+					}
+							.description-category h1 {/*Заголовок категории*/
+									font-weight: bold;
+									font-size: 16px;
+									color: #333;
+									line-height: 1;
+									margin: 0 0 20px 0;
+							}
+							.description-category p {/*описание категории*/
+									font-size: 14px;
+									color: #666;
+									line-height: 1.5;
+									margin: 0 0 10px 0;
+							}
+									.description-category p:last-child {
+											margin: 0 0 0 0;
+									}
+
+									/*Разделительная линия*/
+.devide-line {
+	width: 670px;
+	height: auto;
+	border-bottom: 1px solid #f5f5f5;
+	margin: 30px 0;
+}
+/*Похожие записи*/
+.related-post {
+	width: 670px;
+	height: auto;
+	overflow: hidden;
+}
+	.related-post p {/*заголовок блока*/
+			font-size: 16px;
+			font-weight: bold;
+			color: #333;
+			margin: 0 0 30px 0;
+			line-height: 1;
+	}
+	.related-post ul {/*стилизация списка*/
+			list-style-position: inside;
+			list-style-type: none;
+			margin: 0 0 0 20px;
+	}
+			.related-post ul li a {
+					display: inline-block;
+					color: #666;
+					font-size: 14px;
+					color: #666;
+					text-decoration: none;
+					margin: 0 0 15px 0;
+					line-height: 1;
+			}
+					.related-post ul li a:before {
+							float: left;
+							content: "-";
+							font-size: 14px;
+							color: #666;
+							margin: 0 10px 0 0 ;
+					}
+					.related-post ul li:last-child a {
+							margin: 0 0 0 0;
+					}
+					.related-post ul li a:hover {
+							text-decoration: underline;
+							color: #2d3e50;
+					}
+
+
+					/*Результаты поиска*/
+.search-result {
+	width: 670px;
+	height: auto;
+	margin: 0 0 50px 0;
+	overflow: hidden;
+}
+	.search-result h1 {/*Заголовок страницы поиска*/
+			font-weight: bold;
+			font-size: 16px;
+			color: #333;
+			line-height: 1;
+			margin: 0 0 20px 0;
+	}
+	.search-result p {/*текст с результатам поиска*/
+			font-size: 14px;
+			color: #666;
+			line-height: 1.5;
+	}
+
+	/*Заголовок страницы 404*/
+.title-404 {
+	width: 670px;
+	height: auto;
+	margin: 0 0 20px 0;
+	overflow: hidden;
+}   
+	/*Заголовок записи/страницы*/
+	.title-404 h1 {
+			font-weight: bold;
+			font-size: 16px;
+			color: #333;
+			line-height: 1;
+	} 
